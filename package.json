@@ -1,0 +1,20 @@
+{
+  "author": "Albert Villaroman <avdeveloper@gmail.com> (https://twitter.com/ariansanti)",
+  "name": "crepejs",
+  "description": "A lightweight wrapper for jsdom. Use if you want to scrape a specific webpage for a set of elements that contain the text you want to fetch.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/avdeveloper/crepe",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/avdeveloper/crepe.git"
+  },
+  "main": "crepe",
+  "dependencies": {
+    "jsdom": "0.5.x"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
