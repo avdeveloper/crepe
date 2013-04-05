@@ -1,5 +1,9 @@
 // Step 1. Require the library
-var crepe = require('crepe');
+
+// Use the one below on your code
+// var crepe = require('crepe');
+
+var crepe = require('./crepe'); // DO NOT use this one on your code
 
 // Step 2. Start scraping the web page
 crepe.scrape({
