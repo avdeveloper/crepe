@@ -6,12 +6,6 @@ function Crepe (url, request, callback) {
       jsdom   = require("jsdom"),
       jQuery  = "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js";
   
-  /* ~Constructor
-   * ---------------------------------- */
-  (function init() {
-    // TODO empty
-  })();
-
   /* ~Public Methods
    * ---------------------------------- */
   self.scrape = function (callback) {
