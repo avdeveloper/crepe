@@ -18,7 +18,7 @@ function Crepe (url, request, callback) {
     var returnable = {};
     jsdom.env(url, [jQuery], function (errors, window) {
       for (var key in request) {
-        returnable[key] = window.$(request[key]).text();
+        returnable[key] = window.$(request[key]);
       }
       callback(errors, returnable);
     });
