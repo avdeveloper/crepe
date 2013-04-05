@@ -1,14 +1,20 @@
 // Step 1. Require the library
-var Crepe = require('./crepe.js');
+var crepe = require('./crepe.js');
 
-// Step 2. Specify the webpage URL and delineate the DOM elments whose text to fetch
-crepe = new Crepe('http://poly.edu/academics/course/CS9963', {
-  name:         '2#center h2',       // NOTE: use jQuery selectors
-  credits:      '#center p:eq(0)',
-  description:  '#center p:eq(1)'
-});
-
-// Step 3. Start scraping the web page
-crepe.scrape(function (errors, response) {
-  console.log(response);
+// Step 2. Start scraping the web page
+crepe.scrape({
+  url: 'http://poly.edu/academics/course/CS9963',
+  items: {
+    name:         '#center h2',       // NOTE: use jQuery selectors
+    credits:      '#center p:eq(0)',
+    description:  '#center p:eq(1)'
+  },
+  error: function (errors) {
+    for (var error in errors)
+      console.error(errors[error])
+  },
+  success: function (data) {
+    // Step 3. Start digesting the scraped HTML fragments in data
+    console.log(data);
+  }
 });
