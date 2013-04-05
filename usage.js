@@ -1,5 +1,5 @@
 // Step 1. Require the library
-var crepe = require('./crepe.js');
+var crepe = require('crepe');
 
 // Step 2. Start scraping the web page
 crepe.scrape({
