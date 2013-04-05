@@ -10,10 +10,11 @@ function Crepe (url, request, callback) {
    * ---------------------------------- */
   self.scrape = function (callback) {
     jsdom.env(url, [jQuery], function (errors, window) {
+      var response = {};
       for (var key in request) {
-        request[key] = window.$(request[key]); // NOTE replace the old value with scraped data
+        response[key] = window.$(request[key]); // NOTE replace the old value with scraped data
       }
-      callback(errors, request);
+      callback(errors, response);
     });
   };
 
