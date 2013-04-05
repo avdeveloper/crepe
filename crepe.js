@@ -10,11 +10,14 @@ function Crepe (url, request, callback) {
    * ---------------------------------- */
   self.scrape = function (callback) {
     jsdom.env(url, [jQuery], function (errors, window) {
-      var response = {};
       for (var key in request) {
-        response[key] = window.$(request[key]); // NOTE replace the old value with scraped data
+        try {
+          request[key] = (window.$(request[key]))[0].outerHTML; // get the HTML in string format
+        } catch (ElementNotFoundError) {
+          request[key] = "HTML element not found";
+        }
       }
-      callback(errors, response);
+      callback(errors, request);
     });
   };
 
